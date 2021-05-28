@@ -1,0 +1,17 @@
+{
+    "name": "igoroguraramos/boleto-bradesco-api",
+    "authors": [
+        {
+            "name": "Igor Ogura Ramos",
+            "email": "igoroguraramos@hotmail.com"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "BradescoBoleto\\":"app/"
+        }
+    }
+}
