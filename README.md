@@ -16,7 +16,7 @@ composer require igoroguraramos/boleto-bradesco-api
 ## Requisitos
 - Possuir contrato com o Bradesco e com o Webservice ativado
 - Mesmo em ambiente de teste os dados devem ser reais para funcionar
-- Necessário o certificado A1 no formato .p12
+- Necessário o certificado A1 no formato .p12 ou .pfx
 
 ### Array de Configuração
 ```php
@@ -30,11 +30,11 @@ $config = [
 ];
 ```
 - sandbox = true (para homologação) e false (para produção)
-- cert_path = caminho absoluto do certificado e extensão .p12
+- cert_path = caminho absoluto do certificado e extensão .p12 ou .pfx
 - cert_password = senha do certificado digital
 - cnpj_beneficiario = CNPJ do beneficiario sem caracteres especiais ex: 12345678000190
 - agencia_beneficiario = agência do beneficiario sem o digito verificador
-- conta_beneficiario = numero da conta sem o digito verificador
+- conta_beneficiario = numero da conta com o digito verificador
 
 
 ## Exemplo
@@ -73,5 +73,7 @@ $format = \BradescoBoleto\Format::execute($boleto);
 $api = new API;
 $return = $api->execute($format);
 
+print_r($return);
+//echo json_encode($return);
 
 ```
